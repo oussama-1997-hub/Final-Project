@@ -1,0 +1,48 @@
+.user-card {
+    margin: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-card-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .user-info {
+    flex: 1;
+  }
+  
+  .username {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .user-details {
+    margin: 0;
+    color: #888;
+    font-size: 1rem;
+  }
+  
+  .user-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+    border: none;
+  }
