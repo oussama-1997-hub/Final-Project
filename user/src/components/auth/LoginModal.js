@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
+import EditModal from '../EditModal';
 
 import {
   Button,
@@ -22,11 +22,8 @@ const LoginModal = () => {
   const [modal, setModal] = useState(false);
   const[email,setEmail]=useState("")
   const[password,setPassword]=useState("")
-  
-  
 
- 
-
+  
 
 
 const navigate=useNavigate()

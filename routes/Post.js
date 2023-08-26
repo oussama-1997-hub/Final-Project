@@ -1,6 +1,7 @@
 const express=require("express")
 const router=express.Router()
 const Post=require('../Modules/Post')
+const User=require('../Modules/User')
 
 // add new post 
 router.post('/add', async(req,res)=>{
@@ -30,4 +31,5 @@ router.put('/edit/:id', async(req,res)=>{
     const post=await Post.findOneAndUpdate({_id:id},{$set:req.body},{new:true})
     res.send({msg:"post updated", post})
 })
+
 module.exports=router 

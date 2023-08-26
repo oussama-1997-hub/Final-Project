@@ -47,18 +47,8 @@ navigate("/post")
             <Input onChange={(e)=>(setContent(e.target.value),setCreatedAt(Date.now))} type="textarea" name="text" id="exampleText" />
           </Col>
         </FormGroup>
-        <FormGroup row>
-          <Label for="exampleFile" sm={2}>File</Label>
-          <Col sm={10}>
-            <Input type="file" name="file" id="exampleFile" />
-            <FormText color="muted">
-              This is some placeholder block-level help text for the above input.
-              It's a bit lighter and easily wraps to a new line.
-            </FormText>
-            <Button onClick={add}>Add Post</Button>
+        <Button onClick={add}>Add Post</Button>
             <Button onClick={() => setCancel(!cancel)}>cancel</Button>
-          </Col>
-        </FormGroup>
       </Form>
         </div>
  )

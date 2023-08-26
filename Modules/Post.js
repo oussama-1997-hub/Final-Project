@@ -23,10 +23,6 @@ const postSchema = new schema({
       type: Date,
       default: Date.now,
     },
-    likes: {
-      type: Number,
-      default: 0,
-    },
     imageUrl: {
       type: String,
     },

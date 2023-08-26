@@ -1,4 +1,4 @@
-import { GET_USERS, GET_POSTS, GET_AUTH_USER, LOGIN_USER, LOGOUT_USER, REGISTER_USER} from "./actionType"
+import { GET_USERS, GET_POSTS, GET_AUTH_USER, LOGIN_USER, LOGOUT_USER, REGISTER_USER, LIKE_POST, ADD_COMMENT} from "./actionType"
 
 import axios from "axios"
 

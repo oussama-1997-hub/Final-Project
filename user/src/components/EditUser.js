@@ -11,15 +11,15 @@ import {
   Input,
 } from "reactstrap";
 import { useDispatch } from "react-redux";
-import {editPost} from "../redux/actions"
+import {editUser} from "../redux/actions"
 
 
 
-const EditModal = ({el, isAuth}) => {
+const EditUser = ({el, isAuth}) => {
   const [modal, setModal] = useState(false);
-  const[title,setTitle]=useState(el.title)
-  const[content,setContent]=useState(el.content)
-  const[updatedAt,setupdatedAt]=useState(el.updatedAt)
+  const[username,setUsername]=useState(el.username)
+  const[phoneNumber,setPhonenumber]=useState(el.phoneNumber)
+  const[email,setEmail]=useState(el.email)
 
 
   const toggle = () => {
@@ -29,24 +29,24 @@ const EditModal = ({el, isAuth}) => {
   const dispatch = useDispatch();
 
   const editt=()=>{
-    dispatch(editPost(el._id,{title,content,updatedAt}))
+    dispatch(editUser(el._id,{username,phoneNumber,email}))
     setModal(!modal)
   }
 
   return (
     <div>
       <Button color="danger" onClick={toggle}>
-        Edit Post{" "}
+        Edit User{" "}
       </Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>edit modal</ModalHeader>
         <ModalBody>
           <Form>
             <FormGroup>
-              <Label for="exampleTitle">Title</Label>
+              <Label for="exampleTitle"> Username </Label>
               <Input
-            value={title}
-            onChange={(e)=>(setTitle(e.target.value),setupdatedAt(Date.now))}
+            value={username}
+            onChange={(e)=>setUsername(e.target.value)}
                 type="title"
                 name="title"
                 id="exampleTitle"
@@ -54,10 +54,21 @@ const EditModal = ({el, isAuth}) => {
               />
             </FormGroup>
             <FormGroup>
-              <Label for="examplePassword">content</Label>
+              <Label for="examplePassword">Phone Number</Label>
               <Input
-         value={content}
-         onChange={(e)=>setContent(e.target.value)}
+         value={phoneNumber}
+         onChange={(e)=>setPhonenumber(e.target.value)}
+                type="text"
+                name="content"
+                id="exampleConetnt"
+                placeholder="Conetnt"
+              />
+            </FormGroup>
+              <FormGroup>
+              <Label for="examplePassword">Email</Label>
+              <Input
+         value={email}
+         onChange={(e)=>setEmail(e.target.value)}
                 type="text"
                 name="content"
                 id="exampleConetnt"
@@ -79,4 +90,4 @@ const EditModal = ({el, isAuth}) => {
   );
 };
 
-export default EditModal;
+export default EditUser;

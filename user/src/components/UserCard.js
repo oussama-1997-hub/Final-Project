@@ -1,15 +1,25 @@
 import React from 'react';
-import {deletUser} from "../redux/actions"
+import {deletUser, editUser, logout} from "../redux/actions"
 import {useDispatch} from "react-redux"
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 import "./UserCard.css";
+import EditUser from './EditUser';
+import { useSelector } from 'react-redux';
+import {useNavigate} from "react-router-dom"
+
 
 const UserCard=({el})=>{
     const dispatch=useDispatch()
-
+    const user=useSelector((state)=>state.authReducer.user)
+    const navigate=useNavigate()
     const deletee=()=>{
 dispatch(deletUser(el._id))
+dispatch(logout())
+navigate("/")
     }
+    const edit=()=>{
+      dispatch(editUser(el._id))
+          }
     return(
         <div>
        <Card className="user-card">
@@ -23,9 +33,12 @@ dispatch(deletUser(el._id))
         </div>
       </div>
       <div className="user-card-footer">
+      {user && el.username==user.username && (<>
         <Button className="delete-button" onClick={deletee}>
           Delete
         </Button>
+        <EditUser el={el} /></>)}
+        
         {/* You can add more buttons or actions here */}
       </div>
     </Card>
